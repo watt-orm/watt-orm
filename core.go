@@ -13,6 +13,6 @@ func NewCore() *Core {
 	return &Core{}
 }
 
-func (c *Core) Model() *Model {
+func (c *Core) Model(tableName string) *Model {
 	return &Model{}
 }

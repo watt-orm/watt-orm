@@ -6,10 +6,18 @@ import (
 	_ "watt-orm/device/mysql"
 )
 
-func TestNewDb(t *testing.T) {
+func getDb() (watt_orm.DB, error) {
 	conf := watt_orm.GetDbConf()
-	_, err := watt_orm.New(conf)
+	return watt_orm.New(conf)
+}
+
+func TestNewDb(t *testing.T) {
+	_, err := getDb()
 	if err != nil {
-		panic(err)
+		t.Error(err)
 	}
+}
+
+func TestFind(t *testing.T) {
+
 }
